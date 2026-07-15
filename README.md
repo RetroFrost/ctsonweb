@@ -13,6 +13,10 @@ The default deployment is fully static:
 
 GitHub Pages cannot run FFmpeg, so H.264/AAC MP4 rendering remains an optional backend feature. To reconnect the CTS backend, add a repository Actions variable named `REACT_APP_BACKEND_URL` containing the backend origin, without `/api` at the end.
 
+## First-time Pages activation
+
+For a new repository, open **Settings → Pages** and set **Source** to **GitHub Actions** once. GitHub will then use `.github/workflows/deploy-pages.yml` for future deployments.
+
 ## Local development
 
 ```bash
