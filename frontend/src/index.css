@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #0a0a0a;
+  color: #f4f4f5;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+::selection { background: #007aff55; }
+
+.ui-label {
+  @apply text-[10px] tracking-[0.1em] uppercase font-bold text-zinc-500;
+}
+
+.btn-primary {
+  @apply bg-[#007AFF] hover:bg-[#0062cc] text-white rounded-[4px] px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-40 disabled:pointer-events-none;
+}
+.btn-secondary {
+  @apply bg-[#27272A] hover:bg-[#3F3F46] text-zinc-200 rounded-[4px] px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-40 disabled:pointer-events-none;
+}
+.btn-icon {
+  @apply p-1.5 rounded-[4px] hover:bg-zinc-800 text-zinc-400 hover:text-zinc-100 transition-colors disabled:opacity-40 disabled:pointer-events-none;
+}
+.input-dark {
+  @apply bg-[#1A1A1A] border border-[#27272A] text-zinc-100 rounded-[4px] px-2 py-1.5 text-sm w-full focus:outline-none focus-visible:ring-1 focus-visible:ring-[#007AFF] placeholder:text-zinc-600;
+}
+.select-dark {
+  @apply bg-[#1A1A1A] border border-[#27272A] text-zinc-100 rounded-[4px] px-2 py-1.5 text-sm w-full focus:outline-none focus-visible:ring-1 focus-visible:ring-[#007AFF];
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.25s ease both; }
+
+input[type="range"] {
+  @apply appearance-none h-1 bg-zinc-700 rounded-full;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-3 h-3 rounded-full bg-[#007AFF] cursor-pointer;
+}
